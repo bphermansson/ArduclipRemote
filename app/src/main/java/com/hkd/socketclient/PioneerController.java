@@ -59,6 +59,9 @@ public class PioneerController{
         }).start();
     }
 
+    // From Arduino code:
+    // String instructions="1-forward, 2-back, 3-stop, 4nnn-Set speed to nnn, 5 -cutter on, 6 - cutter off, 7 - distSensorEn toggle";
+
     public void fwd(){
         System.out.println("Fwd");
         pioneerclient.sendCommand("1");
@@ -78,6 +81,10 @@ public class PioneerController{
     public void stop(){
         System.out.println("Stop");
         pioneerclient.sendCommand("3");
+    }
+    public void cutter(){
+        System.out.println("Cutter toggle");
+        //pioneerclient.sendCommand("3");
     }
 
 

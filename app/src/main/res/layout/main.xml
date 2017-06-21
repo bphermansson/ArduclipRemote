@@ -127,4 +127,17 @@
         android:layout_toRightOf="@+id/btnStop"
         android:onClick="btnRight"
         android:text="R" />
+
+    <Switch
+        android:id="@+id/swCutter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cutter"
+        android:layout_alignBaseline="@+id/btnFwd"
+        android:layout_alignBottom="@+id/btnFwd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp" />
+
 </RelativeLayout>

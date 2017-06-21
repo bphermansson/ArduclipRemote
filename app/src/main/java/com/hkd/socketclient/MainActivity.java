@@ -37,6 +37,19 @@ public class MainActivity extends Activity {
 		EditText etIp = (EditText) findViewById(R.id.EditTextIp);
 		et = (TextView) findViewById(R.id.inputStreamTextView);
         st = (TextView) findViewById(R.id.statusStreamTextView);
+		Switch swCutter = (Switch) findViewById(R.id.swCutter);
+
+		swCutter.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// do something, the isChecked will be
+				// true if the switch is in the On position
+				if (isChecked) {
+					// do something when check is selected
+				} else {
+					//do something when unchecked
+				}
+			}
+		});
 		et.setMovementMethod(new ScrollingMovementMethod());
 
         //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -84,6 +97,13 @@ public class MainActivity extends Activity {
 			return;
 		}
 		client.stop();
+	}
+	public void btnCutter(View view){
+		if(!client.isConnected()){
+			toastFast("Not connected to a server");
+			return;
+		}
+		client.cutter();
 	}
 
 
