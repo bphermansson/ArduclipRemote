@@ -44,9 +44,11 @@ public class MainActivity extends Activity {
 				// do something, the isChecked will be
 				// true if the switch is in the On position
 				if (isChecked) {
-					// do something when check is selected
+					client.cutter(true);
 				} else {
 					//do something when unchecked
+					client.cutter(false);
+
 				}
 			}
 		});
@@ -98,16 +100,6 @@ public class MainActivity extends Activity {
 		}
 		client.stop();
 	}
-	public void btnCutter(View view){
-		if(!client.isConnected()){
-			toastFast("Not connected to a server");
-			return;
-		}
-		client.cutter();
-	}
-
-
-
 
 	public void onVolumeChange(View view){
 		if(!client.isConnected()){

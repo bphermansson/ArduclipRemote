@@ -82,8 +82,14 @@ public class PioneerController{
         System.out.println("Stop");
         pioneerclient.sendCommand("3");
     }
-    public void cutter(){
+    public void cutter(boolean state){
         System.out.println("Cutter toggle");
+        if (state) {
+            pioneerclient.sendCommand("5");
+        }
+        else {
+            pioneerclient.sendCommand("6");
+        }
         //pioneerclient.sendCommand("3");
     }
 
